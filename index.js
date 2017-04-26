@@ -1,6 +1,7 @@
 
 var chalk = require('chalk');
 var _ = require('lodash');
+var messages = require('./data/logs');
 var logger = require('./lib/logger');
 
 // test chalk
@@ -19,3 +20,7 @@ _.each(myArray, function(land){
 logger.log('Message from info', 'info');
 logger.log('Message from warning', 'warning');
 logger.log('Message from Error', 'error');
+
+_.each(messages, function(line) {
+    logger.log(line.message, line.level);
+});
